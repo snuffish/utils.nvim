@@ -28,8 +28,6 @@ return {
 ## Usage
 
 ```lua
--- WIP
-
 --- Add new keymap bindings
 ---
 ---@param modes string|string[]
