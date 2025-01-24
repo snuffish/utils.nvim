@@ -9,7 +9,7 @@ local stringToChars = function(modes)
   return arr
 end
 
---- Add new keymap bindings
+--- Add new keymap(s) binding(s)
 ---
 ---@param modes string|string[]
 ---@param maps string|string[]
@@ -29,7 +29,7 @@ M.map = function(modes, maps, action, opts)
   end
 end
 
---- Remove keymap bindings
+--- Remove keymap(s) binding(s)
 ---
 ---@param modes string|string[]
 ---@param maps string|string[]
@@ -97,6 +97,7 @@ M.get_all_buffers = function()
 end
 
 M.get_all_buffers_content = function()
+
   local buffers = vim.api.nvim_list_bufs()
   local buffers_content = {}
 

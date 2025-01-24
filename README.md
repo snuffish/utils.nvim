@@ -28,7 +28,7 @@ return {
 ## Usage
 
 ```lua
---- Add new keymap bindings
+--- Add new keymap(s) binding(s)
 ---
 ---@param modes string|string[]
 ---@param maps string|string[]
@@ -36,7 +36,7 @@ return {
 ---@param opts? vim.keymap.set.Opts
 vim.utils.map(modes, maps, action, opts?)
 
---- Remove keymap bindings
+--- Remove keymap(s) binding(s)
 ---
 ---@param modes string|string[]
 ---@param maps string|string[]
