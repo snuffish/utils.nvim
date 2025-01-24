@@ -37,7 +37,7 @@ require("utils").setup(namespace?)
 
 --- Add new keymap(s) binding(s)
 ---
----@param modes string
+---@param modes string|string[]
 ---@param maps string|string[]
 ---@param action string|function
 ---@param opts? vim.keymap.set.Opts
@@ -45,7 +45,7 @@ vim.utils.map(modes, maps, action, opts?)
 
 --- Remove keymap(s) binding(s)
 ---
----@param modes string|
+---@param modes string|string[]
 ---@param maps string|string[]
 vim.utils.remove_map(modes, maps)
 

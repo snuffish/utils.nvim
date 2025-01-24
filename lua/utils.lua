@@ -2,7 +2,7 @@ local M = {}
 
 --- Add new keymap(s) binding(s)
 ---
----@param modes string
+---@param modes string|string[]
 ---@param maps string|string[]
 ---@param action string|function
 ---@param opts? vim.keymap.set.Opts
@@ -21,7 +21,7 @@ end
 
 --- Remove keymap(s) binding(s)
 ---
----@param modes string
+---@param modes string|string[]
 ---@param maps string|string[]
 M.remove_map = function(modes, maps)
 	if type(maps) == "string" then
