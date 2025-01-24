@@ -30,10 +30,30 @@ return {
 ```lua
 -- WIP
 
+--- Add new keymap bindings
+---
+---@param modes string|string[]
+---@param maps string|string[]
+---@param action string|function
+---@param opts? vim.keymap.set.Opts
 vim.utils.map(modes, maps, action, opts?)
+
+--- Remove keymap bindings
+---
+---@param modes string|string[]
+---@param maps string|string[]
 vim.utils.remove_map(modes, maps)
 
+--- Simulate actual physical keypress-actions
+---
+---@param keys string
 vim.utils.trigger_keys(keys)
+
+--- Simulate actual physical keypress-actions
+--- also retruns an high-order function for keymap triggers
+---
+---@param keys string
+---@return function
 vim.utils.trigger_keys_fn(keys)
 
 vim.utils.get_current_bufnr()
