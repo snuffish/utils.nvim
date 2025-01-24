@@ -82,7 +82,7 @@ end
 
 --- Setup the util on a desired namespace for easy access
 ---
----@param namespace string|'utils'
+---@param namespace? string|'utils'
 M.setup = function(namespace)
   namespace = namespace or "utils"
   vim[namespace] = M
