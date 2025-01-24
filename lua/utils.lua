@@ -1,23 +1,12 @@
 local M = {}
 
-local stringToChars = function(modes)
-	local arr = {}
-	for c in modes:gmatch(".") do
-		arr[#arr + 1] = c
-	end
-
-	return arr
-end
-
 --- Add new keymap(s) binding(s)
 ---
----@param modes string|string[]
+---@param modes string
 ---@param maps string|string[]
 ---@param action string|function
 ---@param opts? vim.keymap.set.Opts
 M.map = function(modes, maps, action, opts)
-	modes = stringToChars(modes)
-
 	if type(maps) == "string" then
 		maps = { maps }
 	end
@@ -32,16 +21,15 @@ end
 
 --- Remove keymap(s) binding(s)
 ---
----@param modes string|string[]
+---@param modes string
 ---@param maps string|string[]
 M.remove_map = function(modes, maps)
-	modes = stringToChars(modes)
-
 	if type(maps) == "string" then
 		maps = { maps }
 	end
 
-	for _, mode in ipairs(modes) do
+	for i = 1, #modes do
+		local mode = modes:sub(i, i)
 		for _, map in ipairs(maps) do
 			if vim.fn.maparg(map, mode) ~= "" then
 				vim.keymap.del(mode, map)
