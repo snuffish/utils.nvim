@@ -14,6 +14,8 @@ return {
 
 ## Configuration
 
+Calling setup isn't neccesarry - only do this if you want `utils.nvim` on another *namespace*.
+
 ```lua
 
 return {
