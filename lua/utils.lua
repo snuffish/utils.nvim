@@ -23,7 +23,7 @@ M.map = function(modes, maps, action, opts)
 	end
 
 	for i = 1, #modes do
-		mode = modes:sub(i, i)
+		local mode = modes:sub(i, i)
 		for _, map in ipairs(maps) do
 			vim.keymap.set(mode, map, action, opts)
 		end
