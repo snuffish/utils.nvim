@@ -28,6 +28,11 @@ return {
 ## Usage
 
 ```lua
+--- Setup the util on a desired namespace for easy access
+---
+---@param namespace? string|'utils'
+require("utils").setup(namespace?)
+
 --- Add new keymap(s) binding(s)
 ---
 ---@param modes string|string[]
