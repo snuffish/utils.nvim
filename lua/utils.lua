@@ -15,7 +15,6 @@ M.map = function(modes, maps, action, opts)
 		maps = { maps }
 	end
 
-
 	for i = 1, #modes do
 		local mode = modes:sub(i, i)
 		for _, map in ipairs(maps) do
