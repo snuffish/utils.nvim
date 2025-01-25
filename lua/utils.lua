@@ -7,9 +7,14 @@ local M = {}
 ---@param action string|function
 ---@param opts? vim.keymap.set.Opts
 M.map = function(modes, maps, action, opts)
+  if type(modes) == "table" then
+    modes = table.concat(modes)
+  end
+
 	if type(maps) == "string" then
 		maps = { maps }
 	end
+
 
 	for i = 1, #modes do
 		local mode = modes:sub(i, i)
@@ -24,9 +29,13 @@ end
 ---@param modes string|string[]
 ---@param maps string|string[]
 M.remove_map = function(modes, maps)
-	if type(maps) == "string" then
-		maps = { maps }
-	end
+  if type(modes) == "table" then
+    modes = table.concat(modes)
+  end
+
+  if type(maps) == "string" then
+    maps = { maps }
+  end
 
 	for i = 1, #modes do
 		local mode = modes:sub(i, i)
@@ -71,20 +80,23 @@ end
 
 --- Setup the util on a desired namespace for easy access
 ---
----@param namespace? string|'utils'
+---@param namespace? string
 M.setup = function(namespace)
 	namespace = namespace or "utils"
 	vim[namespace] = M
 end
 
+---@return integer
 M.get_current_bufnr = function()
 	return vim.api.nvim_get_current_buf()
 end
 
+---@return integer[]
 M.get_all_buffers = function()
 	return vim.api.nvim_list_bufs()
 end
 
+---@return any
 M.get_all_buffers_content = function()
 	local buffers = vim.api.nvim_list_bufs()
 	local buffers_content = {}

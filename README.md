@@ -32,7 +32,7 @@ return {
 ```lua
 --- Setup the util on a desired namespace for easy access
 ---
----@param namespace? string|'utils'
+---@param namespace? string
 require("utils").setup(namespace?)
 
 --- Add new keymap(s) binding(s)
